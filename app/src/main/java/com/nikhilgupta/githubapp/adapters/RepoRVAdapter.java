@@ -1,4 +1,4 @@
-package com.nikhilgupta.githubapp;
+package com.nikhilgupta.githubapp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.nikhilgupta.githubapp.CommitsActivity;
+import com.nikhilgupta.githubapp.IssuesActivity;
+import com.nikhilgupta.githubapp.R;
+import com.nikhilgupta.githubapp.pojo.Repo;
 
 import java.util.List;
 
@@ -42,8 +47,8 @@ public class RepoRVAdapter extends RecyclerView.Adapter<RepoRVAdapter.RepoViewHo
         Repo repo = mRepos.get(position);
 
         // set values
-        holder.userTV.setText(repo.getOwner().getUser());
-        holder.repoTV.setText(repo.getRepoName());
+        holder.userTV.setText(repo.owner.user);
+        holder.repoTV.setText(repo.repoName);
     }
 
     @Override
@@ -71,8 +76,8 @@ public class RepoRVAdapter extends RecyclerView.Adapter<RepoRVAdapter.RepoViewHo
             itemView.setOnClickListener(this);
             issueTV.setOnClickListener(v -> {
                 Log.d(TAG, "onClick: ");
-                String user = mRepos.get(getAdapterPosition()).getOwner().getUser();
-                String repoName = mRepos.get(getAdapterPosition()).getRepoName();
+                String user = mRepos.get(getAdapterPosition()).owner.user;
+                String repoName = mRepos.get(getAdapterPosition()).repoName;
                 Intent intent = new Intent(mContext, IssuesActivity.class);
                 intent.putExtra(IssuesActivity.EXTRA_USER_KEY, user);
                 intent.putExtra(IssuesActivity.EXTRA_REPO_KEY, repoName);
@@ -80,8 +85,8 @@ public class RepoRVAdapter extends RecyclerView.Adapter<RepoRVAdapter.RepoViewHo
             });
             commitTV.setOnClickListener(v -> {
                 Log.d(TAG, "onClick in onBind: ");
-                String user = mRepos.get(getAdapterPosition()).getOwner().getUser();
-                String repoName = mRepos.get(getAdapterPosition()).getRepoName();
+                String user = mRepos.get(getAdapterPosition()).owner.user;
+                String repoName = mRepos.get(getAdapterPosition()).repoName;
                 Intent intent = new Intent(mContext, CommitsActivity.class);
                 intent.putExtra(IssuesActivity.EXTRA_USER_KEY, user);
                 intent.putExtra(IssuesActivity.EXTRA_REPO_KEY, repoName);
@@ -92,8 +97,8 @@ public class RepoRVAdapter extends RecyclerView.Adapter<RepoRVAdapter.RepoViewHo
         @Override
         public void onClick(View v) {
             Log.d(TAG, "onClick in ViewHolder: ");
-            String user = mRepos.get(getAdapterPosition()).getOwner().getUser();
-            String repoName = mRepos.get(getAdapterPosition()).getRepoName();
+            String user = mRepos.get(getAdapterPosition()).owner.user;
+            String repoName = mRepos.get(getAdapterPosition()).repoName;
             mItemClickListener.onItemCLickListener(user,repoName);
         }
     }

@@ -1,4 +1,4 @@
-package com.nikhilgupta.githubapp;
+package com.nikhilgupta.githubapp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.nikhilgupta.githubapp.R;
+import com.nikhilgupta.githubapp.pojo.GitEvent;
 
 import java.util.List;
 
@@ -36,10 +39,10 @@ public class EventsRVAdapter extends RecyclerView.Adapter<EventsRVAdapter.EventV
         GitEvent event = mEvents.get(position);
 
         // set values
-        holder.nameTV.setText(event.getRepo().getName());
-        holder.typeTV.setText(event.getType());
+        holder.nameTV.setText(event.repo.name);
+        holder.typeTV.setText(event.type);
         holder.timeTV.setVisibility(View.GONE);
-        String date = event.getDate();
+        String date = event.date;
         holder.dateTV.setText(date.substring(0,date.indexOf('T')));
     }
 

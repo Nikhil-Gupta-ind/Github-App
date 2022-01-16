@@ -17,6 +17,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.nikhilgupta.githubapp.adapters.EventsRVAdapter;
+import com.nikhilgupta.githubapp.pojo.GitEvent;
 import com.nikhilgupta.githubapp.utilities.APIInterface;
 import com.nikhilgupta.githubapp.utilities.RawResult;
 import com.nikhilgupta.githubapp.utilities.RetrofitClient;

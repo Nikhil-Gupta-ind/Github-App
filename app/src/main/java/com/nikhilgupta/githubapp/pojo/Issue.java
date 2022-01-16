@@ -1,4 +1,4 @@
-package com.nikhilgupta.githubapp;
+package com.nikhilgupta.githubapp.pojo;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -7,15 +7,15 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Issue {
     @SerializedName("number")
-    String number;
+    public String number;
     @SerializedName("title")
-    String title;
+    public String title;
     @SerializedName("state")
-    String state;
+    public String state;
     @SerializedName("updated_at")
-    String updatedAt;
+    public String updatedAt;
     @SerializedName("body")
-    String body;
+    public String body;
 
     public Issue(String number, String title, String state, String updatedAt, String body) {
         this.number = number;
@@ -23,25 +23,5 @@ public class Issue {
         this.state = state;
         this.updatedAt = updatedAt;
         this.body = body;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public String getTitle() {
-        return title;
     }
 }

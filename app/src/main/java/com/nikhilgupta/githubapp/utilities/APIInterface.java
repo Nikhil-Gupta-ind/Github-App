@@ -1,9 +1,9 @@
 package com.nikhilgupta.githubapp.utilities;
 
-import com.nikhilgupta.githubapp.Commit;
-import com.nikhilgupta.githubapp.GitEvent;
-import com.nikhilgupta.githubapp.Issue;
-import com.nikhilgupta.githubapp.Repo;
+import com.nikhilgupta.githubapp.pojo.Commit;
+import com.nikhilgupta.githubapp.pojo.GitEvent;
+import com.nikhilgupta.githubapp.pojo.Issue;
+import com.nikhilgupta.githubapp.pojo.Repo;
 
 import java.util.List;
 

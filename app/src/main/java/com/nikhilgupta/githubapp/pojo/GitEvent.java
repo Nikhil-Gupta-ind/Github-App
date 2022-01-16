@@ -1,12 +1,12 @@
-package com.nikhilgupta.githubapp;
+package com.nikhilgupta.githubapp.pojo;
 
 import com.google.gson.annotations.SerializedName;
 
 public class GitEvent {
     @SerializedName("type")
-    String type;
+    public String type;
     @SerializedName("repo")
-    ERepo repo;
+    public ERepo repo;
 
     public GitEvent(String type, ERepo repo, String date) {
         this.type = type;
@@ -16,7 +16,7 @@ public class GitEvent {
 
     public class ERepo {
         @SerializedName("name")
-        String name;
+        public String name;
 
         public String getName() {
             return name;
@@ -24,17 +24,5 @@ public class GitEvent {
     }
 
     @SerializedName("created_at")
-    String date;
-
-    public String getType() {
-        return type;
-    }
-
-    public ERepo getRepo() {
-        return repo;
-    }
-
-    public String getDate() {
-        return date;
-    }
+    public String date;
 }

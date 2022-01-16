@@ -1,4 +1,4 @@
-package com.nikhilgupta.githubapp;
+package com.nikhilgupta.githubapp.pojo;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Commit {
     @SerializedName("sha")
-    String sha;
+    public String sha;
     @SerializedName("commit")
     public InnerCommit innerCommit;
 
@@ -16,24 +16,12 @@ public class Commit {
         this.innerCommit = innerCommit;
     }
 
-    public String getSha() {
-        return sha;
-    }
-
-    public InnerCommit getInnerCommit() {
-        return innerCommit;
-    }
-
     public static class InnerCommit {
         @SerializedName("message")
-        String message;
+        public String message;
 
         public InnerCommit(String message) {
             this.message = message;
-        }
-
-        public String getMessage() {
-            return message;
         }
     }
 }

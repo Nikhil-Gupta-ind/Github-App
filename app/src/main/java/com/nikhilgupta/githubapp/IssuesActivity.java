@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.nikhilgupta.githubapp.adapters.IssueRVAdapter;
+import com.nikhilgupta.githubapp.pojo.Issue;
 import com.nikhilgupta.githubapp.utilities.APIInterface;
 import com.nikhilgupta.githubapp.utilities.RetrofitClient;
 

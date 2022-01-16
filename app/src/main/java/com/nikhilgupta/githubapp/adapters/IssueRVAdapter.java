@@ -1,4 +1,4 @@
-package com.nikhilgupta.githubapp;
+package com.nikhilgupta.githubapp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.nikhilgupta.githubapp.R;
+import com.nikhilgupta.githubapp.pojo.Issue;
 
 import java.util.List;
 
@@ -39,8 +42,8 @@ public class IssueRVAdapter extends RecyclerView.Adapter<IssueRVAdapter.IssueVie
         Issue issue = mIssues.get(position);
 
         // set values
-        holder.numberTV.setText("#"+issue.getNumber());
-        holder.issueTitle.setText(issue.getTitle());
+        holder.numberTV.setText("#"+issue.number);
+        holder.issueTitle.setText(issue.title);
         holder.issueTV.setVisibility(View.GONE);
         holder.commitTV.setVisibility(View.GONE);
     }
@@ -71,11 +74,11 @@ public class IssueRVAdapter extends RecyclerView.Adapter<IssueRVAdapter.IssueVie
 
         @Override
         public void onClick(View v) {
-            String number = mIssues.get(getAdapterPosition()).getNumber();
-            String title = mIssues.get(getAdapterPosition()).getTitle();
-            String state = mIssues.get(getAdapterPosition()).getState();
-            String updatedAt = mIssues.get(getAdapterPosition()).getUpdatedAt();
-            String body = mIssues.get(getAdapterPosition()).getBody();
+            String number = mIssues.get(getAdapterPosition()).number;
+            String title = mIssues.get(getAdapterPosition()).title;
+            String state = mIssues.get(getAdapterPosition()).state;
+            String updatedAt = mIssues.get(getAdapterPosition()).updatedAt;
+            String body = mIssues.get(getAdapterPosition()).body;
             mItemClickListener.onItemCLickListener(number, title, state, updatedAt,body);
         }
     }

@@ -1,4 +1,4 @@
-package com.nikhilgupta.githubapp;
+package com.nikhilgupta.githubapp.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.nikhilgupta.githubapp.R;
+import com.nikhilgupta.githubapp.pojo.Commit;
 
 import java.util.List;
 
@@ -35,8 +38,8 @@ public class CommitsRVAdapter extends RecyclerView.Adapter<CommitsRVAdapter.Comm
         Commit commit = mCommits.get(position);
 
         // set values
-        holder.shaTV.setText(commit.getSha());
-        holder.messageTV.setText(commit.getInnerCommit().getMessage());
+        holder.shaTV.setText(commit.sha);
+        holder.messageTV.setText(commit.innerCommit.message);
         holder.issueTV.setVisibility(View.GONE);
         holder.commitTV.setVisibility(View.GONE);
     }
