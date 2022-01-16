@@ -39,7 +39,8 @@ public class EventsRVAdapter extends RecyclerView.Adapter<EventsRVAdapter.EventV
         holder.nameTV.setText(event.getRepo().getName());
         holder.typeTV.setText(event.getType());
         holder.timeTV.setVisibility(View.GONE);
-        holder.dateTV.setText(event.getDate());
+        String date = event.getDate();
+        holder.dateTV.setText(date.substring(0,date.indexOf('T')));
     }
 
     @Override
